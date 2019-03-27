@@ -1,0 +1,39 @@
+package SeleniumDemo01;
+
+import org.openqa.selenium.WebDriver;
+
+public class ConnectToChrome {
+
+	public static void main(String[] args) {
+
+		  System.setProperty("webdriver.chrome.driver","C:\\chrome\\chromedriver.exe");  
+		  //Khai bao Chrome moi
+		  WebDriver driver=new ChromeDriver();
+		  
+		  //Tao bien URL
+		  String url="http://demo.guru99.com/selenium/newtours/";
+		  
+		  //Get title cua trang hien tai
+		  String title_website="Welcome: Mercury Tours";
+		  
+		  //Tao bien title de so sanh
+		  String title_expect="";
+		  
+		  // Mo trinh duyet
+		  driver.get(url);
+		  
+		  // Gan title cua trinh duyet ban bien da tao
+		  title_expect=driver.getTitle();
+		  
+		  //So sanh title cua trinh duyet va title input
+		  if(title_expect.contentEquals(title_website)) {  
+		   System.out.println("OK");  
+		  }  
+		  else {  
+		   System.out.println("NG");  
+		  }  
+		  //Close Browser
+		  driver.close();  
+	}
+
+	}

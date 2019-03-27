@@ -1,0 +1,36 @@
+package SeleniumDemo01;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class test001 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		  // TODO Auto-generated method stub  
+		  System.setProperty("webdriver.chrome.driver","C:\\chrome\\chromedriver.exe");  
+		  //khai báo chrome mới  
+		  WebDriver driver=new ChromeDriver();  
+		  //tạo biến url để vào web   
+		  String url="http://demo.guru99.com/selenium/newtours/";  
+		  //lấy được title của web hiện tại  
+		  String title_website="Welcome: Mercury Tours";  
+		  //khai báo biến title mong muốn để tý kiểm tra  
+		  String title_mongmuon="";  
+		  //mở url lên  
+		  driver.get(url);  
+		  //lấy title mong muốn là titel gốc của website  
+		  title_mongmuon=driver.getTitle();  
+		  //so sánh title của web và title mong muốn. Nếu = nhau thì ok, còn không thì lỗi :D  
+		  if(title_mongmuon.contentEquals(title_website)) {  
+		   System.out.println("test ok");  
+		  }  
+		  else {  
+		   System.out.println("test lỗi");  
+		  }  
+		  //đóng trình duyệt  
+		  driver.close();  
+	}
+
+}

@@ -1,0 +1,31 @@
+package SeleniumDemo01;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public static void main(String[] args) {  
+	  // TODO Auto-generated method stub  
+	  System.setProperty("webdriver.chrome.driver","C:\\chrome\\chromedriver.exe");  
+
+	  WebDriver driver=new ChromeDriver();  
+
+	  String url="http://demo.guru99.com/selenium/newtours/";  
+
+	  String title_website="Welcome: Mercury Tours";  
+
+	  String title_mongmuon="";  
+
+	  driver.get(url);  
+
+	  title_mongmuon=driver.getTitle();  
+
+	  if(title_mongmuon.contentEquals(title_website)) {  
+	   System.out.println("test ok");  
+	  }  
+	  else {  
+	   System.out.println("test NG");  
+	  }  
+
+	  driver.close();  
+	  }  
+	 }  
